@@ -42,8 +42,20 @@ function observer() {
                     entry.target.classList.add('animate__animated', 'animate__bounceInRight');
                 }
 
+
+
+                // 
+
                 if (entry.target.classList.contains('prod-text')) {
                     entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+
+                if (entry.target.classList.contains('prod-img')) {
+                    entry.target.classList.add('animate__animated', 'animate__zoomIn');
+                }
+
+                if (entry.target.classList.contains('bottom-card')) {
+                    entry.target.classList.add('animate__animated', 'animate__zoomIn');
                 }
 
                 entry.target.classList.add('animate__animated', 'animate__bounceInLeft'); // Add a class.
@@ -66,7 +78,7 @@ function observer() {
      * Get all .item elements and loop over them.
      * Observe each individual item.
      */
-    const items = document.querySelectorAll('.map-section-title');
+    const items = document.querySelectorAll('.map-section-title, .prod-img, .bottom-card');
     for (const item of items) {
         observer.observe(item);
     }
