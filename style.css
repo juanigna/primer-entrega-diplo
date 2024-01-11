@@ -428,7 +428,7 @@ body {
 
 .prod-img {
   border-radius: 5px 5px 0px 0px;
-  max-height: 400px;
+  height: 300px !important;
   width: 100%;
   background-size: cover;
 }

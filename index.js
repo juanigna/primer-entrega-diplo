@@ -34,4 +34,48 @@ function addImages() {
 
 }
 
+function observer() {
+    const intersectionCallback = (entries) => {
+        for (const entry of entries) { // Loop over all elements that either enter or exit the view.
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('map-section-text')) {
+                    entry.target.classList.add('animate__animated', 'animate__bounceInRight');
+                }
+
+                if (entry.target.classList.contains('prod-text')) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+
+                entry.target.classList.add('animate__animated', 'animate__bounceInLeft'); // Add a class.
+            }
+        }
+    }
+
+    /**
+     * Create a observer and use the instersectionCallback as 
+     * the instructions for what to do when an element enters
+     * or leaves the view
+     */
+    const observer = new IntersectionObserver(intersectionCallback);
+
+    const items3 = document.querySelectorAll('.prod-text');
+    for (const item of items3) {
+        observer.observe(item);
+    }
+    /**
+     * Get all .item elements and loop over them.
+     * Observe each individual item.
+     */
+    const items = document.querySelectorAll('.map-section-title');
+    for (const item of items) {
+        observer.observe(item);
+    }
+
+    const items2 = document.querySelectorAll('.map-section-text');
+    for (const item2 of items2) {
+        observer.observe(item2);
+    }
+}
+
 addImages()
+observer()
