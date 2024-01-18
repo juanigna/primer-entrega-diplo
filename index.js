@@ -41,9 +41,6 @@ function observer() {
                 if (entry.target.classList.contains('map-section-text')) {
                     entry.target.classList.add('animate__animated', 'animate__bounceInRight');
                 }
-
-
-
                 // 
 
                 if (entry.target.classList.contains('prod-text')) {
